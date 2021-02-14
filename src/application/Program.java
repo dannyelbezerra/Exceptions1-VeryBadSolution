@@ -9,9 +9,9 @@ import model.entities.Reservation;
 
 public class Program {
 	
-	/* Quando se tem um mÈtodo e dentro dele, È feita uma chamada que pode gerar uma exceÁ„o,
-	 * ou trata a exceÁ„o, que no exemplo seria utilizado Try/catch,
-	 * ou propaga a exceÁ„o, colocando a palavra throws e o nome da exceÁ„o ParseException;
+	/* Quando se tem um m√©todo e dentro dele, √© feita uma chamada que pode gerar uma exce√ß√£o,
+	 * ou trata a exce√ß√£o, que no exemplo seria utilizado Try/catch,
+	 * ou propaga a exce√ß√£o, colocando a palavra throws e o nome da exce√ß√£o ParseException;
 	 */
 
 	public static void main(String[] args) throws ParseException {
@@ -27,10 +27,10 @@ public class Program {
 		System.out.print("Check-out date (dd/MM/yyyy): ");
 		Date checkOut = sdf.parse(sc.next());
 		
-		if (!checkOut.after(checkIn)) { //se n„o checkOut È depois do checkIn, ou seja, se a data do checkOut for posterior a do checkIn, significa que as datas s„o invalidas;
+		if (!checkOut.after(checkIn)) { //se n√£o checkOut √© depois do checkIn, ou seja, se a data do checkOut for posterior a do checkIn, significa que as datas s√£o invalidas;
 			System.out.println("Error in reservation: Check-out date must be after check-in date");
 		}
-		else { //caso contr·rio, vai ser instanciado um objeto do tipo Reservation
+		else { //caso contr√°rio, vai ser instanciado um objeto do tipo Reservation
 			Reservation reservation = new Reservation(number, checkIn, checkOut);
 			System.out.println("Reservation: " + reservation);
 			
@@ -43,7 +43,7 @@ public class Program {
 			
 			Date now = new Date();
 			if(checkIn.before(now) || checkOut.before(now)) {
-				System.out.println("Error in reservation: Check-out date must be after check-in date");
+				System.out.println("Error in reservation: Reservation dates for update must be future dates");
 			}
 			else if (!checkOut.after(checkIn)) {
 				System.out.println("Error in reservation: Check-out date must be after check-in date");
